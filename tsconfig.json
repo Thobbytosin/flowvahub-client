@@ -8,6 +8,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
     "baseUrl": "./src", // Easier imports
     "paths": {
       "@/*": ["./*"] // Example: `@/components/Button`

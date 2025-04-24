@@ -1,9 +1,10 @@
 import React from "react";
 import "../App.css";
+import Welcome from "../components/welcome/Welcome";
 type Props = {};
 
 const Home = (props: Props) => {
-  return <div className="  text-primary">Home</div>;
+  return <Welcome />;
 };
 
 export default Home;
