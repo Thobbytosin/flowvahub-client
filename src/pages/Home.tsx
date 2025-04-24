@@ -1,10 +1,53 @@
-import React from "react";
-import "../App.css";
+import React, { useEffect, useState } from "react";
 import Welcome from "../components/welcome/Welcome";
+import PageLoader from "../components/ui/PageLoader";
+import { useFetchData } from "../hook/useApi";
+import { useUserStore, type User } from "../store/useUserStore";
+
 type Props = {};
 
+interface BackendResponse {
+  success: boolean;
+  user?: User;
+}
+
 const Home = (props: Props) => {
-  return <Welcome />;
+  const [mounted, setMounted] = useState(false);
+  const { data, isFetching, refetch } = useFetchData<BackendResponse>({
+    method: "GET",
+    url: "/user/me",
+    queryKey: ["get-user"],
+  });
+  const setUser = useUserStore((state) => state.setUser);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID);
+    console.log(import.meta.env.VITE_SERVER_URI);
+    console.log("WORKING");
+    refetch();
+  }, [mounted]);
+
+  useEffect(() => {
+    if (data) {
+      setUser(data.user);
+    }
+  }, [data]);
+
+  if (!mounted || isFetching)
+    return (
+      <main role="status" aria-busy="true">
+        <PageLoader />
+      </main>
+    );
+  return (
+    <main role="main" aria-label="Welcome page">
+      <Welcome />
+    </main>
+  );
 };
 
 export default Home;
