@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useAuthReducer } from "../../hook/useAuthreducer";
 import Signup from "./Signup";
 import Signin from "./Signin";
@@ -41,18 +41,21 @@ const Authentication = (props: Props) => {
   });
   const { setPasswordStrength } = actions;
   const navigate = useNavigate();
-  const { setUser } = useUserStore();
 
-  useMemo(() => {
-    if (activeForm !== "signup" || !password) return 0;
-    let strength = 0;
-    if (password.length > 7) strength++;
-    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength++;
-    if (password.match(/([0-9])/)) strength++;
-    if (password.match(/([!,%,&,@,#,$,^,.,*,?,_,~])/)) strength++;
-    setPasswordStrength(strength);
-    return strength;
-  }, [password, activeForm, setPasswordStrength]);
+  // useEffect(() => {
+  //   if (activeForm !== "signup" || !password) {
+  //     setPasswordStrength(0);
+  //     return;
+  //   }
+
+  //   let strength = 0;
+  //   if (password.length > 7) strength++;
+  //   if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength++;
+  //   if (password.match(/[0-9]/)) strength++;
+  //   if (password.match(/[!,%,&,@,#,$,^,.,*,?,_,~]/)) strength++;
+
+  //   setPasswordStrength(strength);
+  // }, [password, activeForm]);
 
   const getPasswordStrengthClass = () => {
     if (passwordStrength === 0) return "bg-gray-200";
