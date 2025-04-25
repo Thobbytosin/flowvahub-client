@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 import { initialState, reducer } from "../../utils/reducer";
 import OnboardingLanding from "./onboardingLanding";
-import AboutYou from "./AbouYou";
+import AboutYou from "./AboutYou";
 import UserLocation from "./UserLocation";
 import ToolStack from "./ToolStack";
 import Tracking from "./Tracking";

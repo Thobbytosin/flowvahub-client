@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import PageTitle from "../../components/ui/PageTitle";
+import PageTitle from "../ui/PageTitle";
 import type { FormType } from "./Onboard";
-import Button from "../../components/ui/Button";
+import Button from "../ui/Button";
 import type {
   ErrorAction,
   ErrorState,
   FieldType,
 } from "../../utils/errorReducer";
-import RevealWrapper, {
-  scaleIn,
-} from "../../components/animation/RevealWrapper";
+import RevealWrapper, { scaleIn } from "../animation/RevealWrapper";
 
 const descriptionArray = [
   { title: "Freelancer", value: "freelancer" },

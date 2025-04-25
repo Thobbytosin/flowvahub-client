@@ -25,9 +25,6 @@ const Home = (props: Props) => {
   }, []);
 
   useEffect(() => {
-    console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID);
-    console.log(import.meta.env.VITE_SERVER_URI);
-    console.log("WORKING");
     refetch();
   }, [mounted]);
 

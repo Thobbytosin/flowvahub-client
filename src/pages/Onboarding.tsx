@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import PageLoader from "../components/ui/PageLoader";
 import React, { useEffect, useState } from "react";
 import { useUserStore } from "../store/useUserStore";
+import { Onboard } from "../components/onboarding/Onboard";
 
 type Props = {};
 
@@ -22,7 +23,16 @@ const Onboarding = (props: Props) => {
 
   if (!mounted || !user) return <PageLoader />;
 
-  return <div>Onboarding</div>;
+  return (
+    <>
+      <title>Flowva Hub - Onboarding</title>
+      <meta
+        name="description"
+        content="Your smart library for organizing tools, tracking usage, and turning productivity into rewards."
+      />
+      <Onboard />
+    </>
+  );
 };
 
 export default Onboarding;

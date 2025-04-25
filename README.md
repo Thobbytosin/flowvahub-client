@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+# Flowva Hub - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_All your favourite work tools in one fun, organized space_
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: React 19
+- **Languages**: TypeScript, JavaScript
+- **State Management**: Zustand
+- **Styling**: Tailwind CSS
+- **Authentication**: JWT Authentication
+- **API Client**: Axios
 
-## Expanding the ESLint configuration
+## 📦 Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- User authentication (JWT-based login & registration)
+- Google sign-in and JWT-based authentication
+- Centralized onboarding experience with step-based flow
+- Custom error reducer for form validation across components
+- Fully responsive layout and accessible design
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🔧 Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Thobbytosin/flowva-server
+   cd flowvahub-client
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Environment Setup**
+   - Create a `.env.local` file and configure environment variables based on `.env.local`
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📡 API Integration
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+This frontend connects to a Node.js + MongoDB backend (running on port 8000). Make sure the backend is up and configured, and that your API URL in .env.local points to the correct host.
+
+## 🚀 Deployment
+
+Frontend is deployed on Render
+
+## 📬 Contact
+
+Project done by - **Falode Tobi**  
+Project Link: https://github.com/Thobbytosin/flowva-client
