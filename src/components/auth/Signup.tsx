@@ -144,14 +144,14 @@ const Signup = ({
           >
             {showSignupPassword ? "Hide" : "Show"}
           </button>
-          <div
+          {/* <div
             className="h-1 bg-gray-200 rounded-full mt-2 overflow-hidden"
             aria-hidden="true"
           >
             <div
               className={`h-full ${getPasswordStrengthClass()} ${getPasswordStrengthWidth()} transition-all duration-300`}
-            ></div>
-          </div>
+            />
+          </div> */}
           {password.length > 0 && (
             <div className="text-xs text-[#757575] mt-1" id="password-guidance">
               Use at least 8 characters with a mix of letters, numbers & symbols
