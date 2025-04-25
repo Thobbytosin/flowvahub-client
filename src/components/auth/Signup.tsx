@@ -20,8 +20,8 @@ type Props = {
   confirmPassword: string;
   setConfirmPassword: (v: string) => void;
   setActiveForm: (formType: AuthFormType) => void;
-  getPasswordStrengthClass: () => void;
-  getPasswordStrengthWidth: () => void;
+  getPasswordStrengthClass: () => string;
+  getPasswordStrengthWidth: () => string;
   showMessage: (text: string, type: AuthMessageType) => void;
   handleSubmit: (e: React.FormEvent, formType: AuthFormType) => void;
 };

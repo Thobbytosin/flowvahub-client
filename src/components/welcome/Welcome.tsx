@@ -47,7 +47,7 @@ const Welcome = () => {
             aria-label="Get started with Flowva"
             data-testid="get-started-button"
           >
-            Get Started
+            {user ? "Get on board" : "Get Started"}
           </button>
         </div>
       </div>
