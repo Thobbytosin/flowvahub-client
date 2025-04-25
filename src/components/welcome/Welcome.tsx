@@ -1,7 +1,9 @@
+import { useUserStore } from "../../store/useUserStore";
 import React from "react";
 import { useNavigate } from "react-router";
 
 const Welcome = () => {
+  const user = useUserStore((state) => state.user);
   const navigate = useNavigate();
 
   return (
@@ -33,7 +35,13 @@ const Welcome = () => {
           data-testid="welcome-actions"
         >
           <button
-            onClick={() => navigate("/auth")}
+            onClick={() => {
+              if (user) {
+                navigate("/onboarding");
+              } else {
+                navigate("/auth");
+              }
+            }}
             type="button"
             className="w-full py-3 text-2xl font-semibold text-primary bg-light rounded-theme border-b-2 border-primary transition-transform duration-300 hover:-translate-y-1"
             aria-label="Get started with Flowva"
