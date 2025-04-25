@@ -107,7 +107,7 @@ const UserLocation = ({ setForm, handleNext, dispatch, errorState }: Props) => {
             )}
           </div>
 
-          <div className="w-full flex items-center justify-between mt-20 md:mt-30">
+          <div className="w-full flex  items-center justify-between mt-20 md:mt-30">
             {/* Continue Button */}
             <Button
               handleClick={handleContinue}
@@ -122,7 +122,7 @@ const UserLocation = ({ setForm, handleNext, dispatch, errorState }: Props) => {
             <button
               type="button"
               onClick={handleSkip}
-              className="md:w-[30%] w-[60%] text-right md:text-center cursor-pointer text-dark transition-all duration-500 hover:text-primary"
+              className="md:w-[30%] w-[60%] md:text-base text-sm text-center cursor-pointer text-dark transition-all duration-500 hover:text-primary"
               aria-label="Skip this step"
             >
               Skip this step

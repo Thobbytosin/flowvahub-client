@@ -49,7 +49,7 @@ export function Onboard() {
 
   return (
     <main className=" min-h-screen w-screen flex items-center justify-center py-20">
-      <div className="  w-[80%] lg:w-[60%] min-h-[80%] bg-white rounded-theme  card-shadow p-10 ">
+      <div className="  w-[80%] lg:w-[60%] min-h-[80%] bg-white rounded-theme  card-shadow p-5 md:p-10 ">
         {/* swiper */}
         <div className=" w-full h-[6px] bg-[#e0e0e0] rounded-full mb-[2rem] flex ">
           {onboardingArray.map((item, index) => (
