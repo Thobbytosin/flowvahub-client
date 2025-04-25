@@ -42,20 +42,20 @@ const Authentication = (props: Props) => {
   const { setPasswordStrength } = actions;
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (activeForm !== "signup" || !password) {
-  //     setPasswordStrength(0);
-  //     return;
-  //   }
+  useEffect(() => {
+    if (activeForm !== "signup" || !password) {
+      setPasswordStrength(0);
+      return;
+    }
 
-  //   let strength = 0;
-  //   if (password.length > 7) strength++;
-  //   if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength++;
-  //   if (password.match(/[0-9]/)) strength++;
-  //   if (password.match(/[!,%,&,@,#,$,^,.,*,?,_,~]/)) strength++;
+    let strength = 0;
+    if (password.length > 7) strength++;
+    if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength++;
+    if (password.match(/[0-9]/)) strength++;
+    if (password.match(/[!,%,&,@,#,$,^,.,*,?,_,~]/)) strength++;
 
-  //   setPasswordStrength(strength);
-  // }, [password, activeForm]);
+    setPasswordStrength(strength);
+  }, [password, activeForm]);
 
   const getPasswordStrengthClass = () => {
     if (passwordStrength === 0) return "bg-gray-200";
